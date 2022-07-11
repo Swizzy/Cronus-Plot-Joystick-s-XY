@@ -11,263 +11,425 @@
         <Brush x:Key="RSColor">#569CD6</Brush>
         <Brush x:Key="LSColor">#80EB3131</Brush>
     </Window.Resources>
-    <Canvas Width="880" Height="880">
-        <Line
-            Stretch="Fill"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="0"
-            X2="880"
-            Y1="0"
-            Y2="880" />
-        <Line
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="880"
-            X2="0"
-            Y1="0"
-            Y2="880" />
-        <Line
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="440"
-            X2="440"
-            Y1="0"
-            Y2="880" />
-        <Line
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="0"
-            X2="880"
-            Y1="440"
-            Y2="440" />
-        <Line
-            Canvas.Left="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="0"
-            X2="40"
-            Y1="177.5"
-            Y2="177.5" />
-        <Line
-            Canvas.Left="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="0"
-            X2="40"
-            Y1="265"
-            Y2="265" />
-        <Line
-            Canvas.Left="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="0"
-            X2="40"
-            Y1="352.5"
-            Y2="352.5" />
-        <Line
-            Canvas.Left="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="0"
-            X2="40"
-            Y1="527.5"
-            Y2="527.5" />
-        <Line
-            Canvas.Left="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="0"
-            X2="40"
-            Y1="615"
-            Y2="615" />
-        <Line
-            Canvas.Left="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="0"
-            X2="40"
-            Y1="702.5"
-            Y2="702.5" />
-        <Line
-            Canvas.Top="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="177.5"
-            X2="177.5"
-            Y1="0"
-            Y2="40" />
-        <Line
-            Canvas.Top="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="265"
-            X2="265"
-            Y1="0"
-            Y2="40" />
-        <Line
-            Canvas.Top="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="352.5"
-            X2="352.5"
-            Y1="0"
-            Y2="40" />
-        <Line
-            Canvas.Top="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="527.5"
-            X2="527.5"
-            Y1="0"
-            Y2="40" />
-        <Line
-            Canvas.Top="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="615"
-            X2="615"
-            Y1="0"
-            Y2="40" />
-        <Line
-            Canvas.Top="420"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1"
-            X1="702.5"
-            X2="702.5"
-            Y1="0"
-            Y2="40" />
-        <Ellipse
-            Canvas.Left="405"
-            Canvas.Top="405"
-            Width="70"
-            Height="70"
-            Fill="Transparent"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1" />
-        <Ellipse
-            Canvas.Left="90"
-            Canvas.Top="90"
-            Width="700"
-            Height="700"
-            Fill="Transparent"
-            Stroke="{StaticResource OutLineColor}"
-            StrokeThickness="1" />
+    <Canvas Width="1760" Height="880">
+        <Canvas Width="880" Height="880">
+            <Line
+                Stretch="Fill"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="880"
+                Y1="0"
+                Y2="880" />
+            <Line
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="880"
+                X2="0"
+                Y1="0"
+                Y2="880" />
+            <Line
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="440"
+                X2="440"
+                Y1="0"
+                Y2="880" />
+            <Line
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="880"
+                Y1="440"
+                Y2="440" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="177.5"
+                Y2="177.5" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="265"
+                Y2="265" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="352.5"
+                Y2="352.5" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="527.5"
+                Y2="527.5" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="615"
+                Y2="615" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="702.5"
+                Y2="702.5" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="177.5"
+                X2="177.5"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="265"
+                X2="265"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="352.5"
+                X2="352.5"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="527.5"
+                X2="527.5"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="615"
+                X2="615"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="702.5"
+                X2="702.5"
+                Y1="0"
+                Y2="40" />
+            <Ellipse
+                Canvas.Left="405"
+                Canvas.Top="405"
+                Width="70"
+                Height="70"
+                Fill="Transparent"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1" />
+            <Ellipse
+                Canvas.Left="90"
+                Canvas.Top="90"
+                Width="700"
+                Height="700"
+                Fill="Transparent"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1" />
+            <Canvas
+                x:Name="InputDisplay"
+                Canvas.Left="0"
+                Canvas.Top="0"
+                Width="880"
+                Height="880"
+                Background="Transparent"
+                Visibility="Collapsed">
+                <TextBlock
+                    Canvas.Left="20"
+                    Canvas.Bottom="40"
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Foreground="{StaticResource LSColor}"
+                    Text="{Binding Path=LXText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
+                <TextBlock
+                    Canvas.Left="20"
+                    Canvas.Bottom="10"
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Foreground="{StaticResource LSColor}"
+                    Text="{Binding Path=LYText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
+                <Grid
+                    Canvas.Left="{Binding Path=LXOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
+                    Canvas.Top="{Binding Path=LYOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
+                    Width="20"
+                    Height="20">
+                    <Path
+                        Stretch="Fill"
+                        Stroke="{StaticResource LSColor}"
+                        StrokeThickness="2">
+                        <Path.Data>
+                            <LineGeometry StartPoint="0,0" EndPoint="1,0" />
+                        </Path.Data>
+                    </Path>
+                    <Path
+                        Stretch="Fill"
+                        Stroke="{StaticResource LSColor}"
+                        StrokeThickness="2">
+                        <Path.Data>
+                            <LineGeometry StartPoint="0,0" EndPoint="0,1" />
+                        </Path.Data>
+                    </Path>
+                </Grid>
+                <Canvas
+                    x:Name="LSTrail"
+                    Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="880"
+                    Height="880"
+                    Background="Transparent" />
+            </Canvas>
+        </Canvas>
         <Canvas
-            x:Name="InputDisplay"
-            Canvas.Left="0"
-            Canvas.Top="0"
+            Canvas.Left="880"
             Width="880"
-            Height="880"
-            Background="Transparent"
-            Visibility="Collapsed">
+            Height="880">
+            <Line
+                Stretch="Fill"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="880"
+                Y1="0"
+                Y2="880" />
+            <Line
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="880"
+                X2="0"
+                Y1="0"
+                Y2="880" />
+            <Line
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="440"
+                X2="440"
+                Y1="0"
+                Y2="880" />
+            <Line
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="880"
+                Y1="440"
+                Y2="440" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="177.5"
+                Y2="177.5" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="265"
+                Y2="265" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="352.5"
+                Y2="352.5" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="527.5"
+                Y2="527.5" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="615"
+                Y2="615" />
+            <Line
+                Canvas.Left="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="702.5"
+                Y2="702.5" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="177.5"
+                X2="177.5"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="265"
+                X2="265"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="352.5"
+                X2="352.5"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="527.5"
+                X2="527.5"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="615"
+                X2="615"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="420"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1"
+                X1="702.5"
+                X2="702.5"
+                Y1="0"
+                Y2="40" />
+            <Ellipse
+                Canvas.Left="405"
+                Canvas.Top="405"
+                Width="70"
+                Height="70"
+                Fill="Transparent"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1" />
+            <Ellipse
+                Canvas.Left="90"
+                Canvas.Top="90"
+                Width="700"
+                Height="700"
+                Fill="Transparent"
+                Stroke="{StaticResource OutLineColor}"
+                StrokeThickness="1" />
+            <Canvas
+                x:Name="InputDisplay2"
+                Canvas.Left="0"
+                Canvas.Top="0"
+                Width="880"
+                Height="880"
+                Background="Transparent"
+                Visibility="Collapsed">
+                <TextBlock
+                    Canvas.Left="740"
+                    Canvas.Bottom="40"
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Foreground="{StaticResource RSColor}"
+                    Text="{Binding Path=RXText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
+                <TextBlock
+                    Canvas.Left="740"
+                    Canvas.Bottom="10"
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Foreground="{StaticResource RSColor}"
+                    Text="{Binding Path=RYText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
+                <Grid
+                    Canvas.Left="{Binding Path=RXOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
+                    Canvas.Top="{Binding Path=RYOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
+                    Width="20"
+                    Height="20">
+                    <Path
+                        Stretch="Fill"
+                        Stroke="{StaticResource RSColor}"
+                        StrokeThickness="2">
+                        <Path.Data>
+                            <LineGeometry StartPoint="0,0" EndPoint="1,0" />
+                        </Path.Data>
+                    </Path>
+                    <Path
+                        Stretch="Fill"
+                        Stroke="{StaticResource RSColor}"
+                        StrokeThickness="2">
+                        <Path.Data>
+                            <LineGeometry StartPoint="0,0" EndPoint="0,1" />
+                        </Path.Data>
+                    </Path>
+                </Grid>
+                <Canvas
+                    x:Name="RSTrail"
+                    Canvas.Left="0"
+                    Canvas.Top="0"
+                    Width="880"
+                    Height="880"
+                    Background="Transparent" />
+            </Canvas>
+        </Canvas>
+        <Grid Width="1760" Height="880">
             <TextBlock
-                Canvas.Left="20"
-                Canvas.Bottom="40"
+                x:Name="NoControllerText"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
                 FontSize="25"
                 FontWeight="Bold"
-                Foreground="{StaticResource LSColor}"
-                Text="{Binding Path=LXText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
-            <TextBlock
-                Canvas.Left="20"
-                Canvas.Bottom="10"
-                FontSize="25"
-                FontWeight="Bold"
-                Foreground="{StaticResource LSColor}"
-                Text="{Binding Path=LYText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
-            <TextBlock
-                Canvas.Left="740"
-                Canvas.Bottom="40"
-                FontSize="25"
-                FontWeight="Bold"
-                Foreground="{StaticResource RSColor}"
-                Text="{Binding Path=RXText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
-            <TextBlock
-                Canvas.Left="740"
-                Canvas.Bottom="10"
-                FontSize="25"
-                FontWeight="Bold"
-                Foreground="{StaticResource RSColor}"
-                Text="{Binding Path=RYText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
+                Foreground="White"
+                Text="No controller detected" />
+            <ComboBox
+                x:Name="DeviceBox"
+                Width="200"
+                Margin="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Visibility="Collapsed" />
             <TextBlock
                 x:Name="NameBlock"
-                Canvas.Bottom="10"
+                Margin="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
                 FontSize="25"
                 FontWeight="Bold"
                 Foreground="{StaticResource OutLineColor}"
                 Text="{Binding Path=ControllerName, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
-            <Grid
-                Canvas.Left="{Binding Path=LXOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
-                Canvas.Top="{Binding Path=LYOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
-                Width="20"
-                Height="20">
-                <Path
-                    Stretch="Fill"
-                    Stroke="{StaticResource LSColor}"
-                    StrokeThickness="2">
-                    <Path.Data>
-                        <LineGeometry StartPoint="0,0" EndPoint="1,0" />
-                    </Path.Data>
-                </Path>
-                <Path
-                    Stretch="Fill"
-                    Stroke="{StaticResource LSColor}"
-                    StrokeThickness="2">
-                    <Path.Data>
-                        <LineGeometry StartPoint="0,0" EndPoint="0,1" />
-                    </Path.Data>
-                </Path>
-            </Grid>
-            <Grid
-                Canvas.Left="{Binding Path=RXOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
-                Canvas.Top="{Binding Path=RYOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
-                Width="20"
-                Height="20">
-                <Path
-                    Stretch="Fill"
-                    Stroke="{StaticResource RSColor}"
-                    StrokeThickness="2">
-                    <Path.Data>
-                        <LineGeometry StartPoint="0,0" EndPoint="1,0" />
-                    </Path.Data>
-                </Path>
-                <Path
-                    Stretch="Fill"
-                    Stroke="{StaticResource RSColor}"
-                    StrokeThickness="2">
-                    <Path.Data>
-                        <LineGeometry StartPoint="0,0" EndPoint="0,1" />
-                    </Path.Data>
-                </Path>
-            </Grid>
-            <Canvas
-                x:Name="LSTrail"
-                Canvas.Left="0"
-                Canvas.Top="0"
-                Width="880"
-                Height="880"
-                Background="Transparent" />
-            <Canvas
-                x:Name="RSTrail"
-                Canvas.Left="0"
-                Canvas.Top="0"
-                Width="880"
-                Height="880"
-                Background="Transparent" />
-        </Canvas>
-        <TextBlock
-            x:Name="NoControllerText"
-            Canvas.Left="310"
-            Canvas.Top="420"
-            FontSize="25"
-            FontWeight="Bold"
-            Foreground="White"
-            Text="No controller detected" />
-        <ComboBox
-            x:Name="DeviceBox"
-            Canvas.Left="340"
-            Canvas.Top="20"
-            Width="200"
-            Visibility="Collapsed" />
+        </Grid>
     </Canvas>
 </Window>

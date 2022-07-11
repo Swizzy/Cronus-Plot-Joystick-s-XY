@@ -267,6 +267,7 @@ namespace CronusXYJoystickPlot
             {
                 NoControllerText.Visibility = noController;
                 InputDisplay.Visibility = others;
+                InputDisplay2.Visibility = others;
             }
             catch
             {
