@@ -359,5 +359,25 @@ namespace CronusXYJoystickPlot
                 }
             }
         }
+
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            if (sizeInfo.NewSize.Width / sizeInfo.NewSize.Height != 1700D / 880D)
+            {
+                double percentWidthChange = Math.Abs(sizeInfo.NewSize.Width - sizeInfo.PreviousSize.Width) / sizeInfo.PreviousSize.Width;
+                double percentHeightChange = Math.Abs(sizeInfo.NewSize.Height - sizeInfo.PreviousSize.Height) / sizeInfo.PreviousSize.Height;
+
+                if (percentWidthChange > percentHeightChange)
+                {
+                    Height = sizeInfo.NewSize.Width / (1700D / 880D);
+                }
+                else
+                {
+                    Width = sizeInfo.NewSize.Height * (1700D / 880D);
+                }
+            }
+
+            base.OnRenderSizeChanged(sizeInfo);
+        }
     }
 }
