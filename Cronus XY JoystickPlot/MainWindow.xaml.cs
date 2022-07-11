@@ -8,7 +8,6 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Shapes;
 using System.Xml.Linq;
 using SharpDX.DirectInput;
 
@@ -20,10 +19,6 @@ namespace CronusXYJoystickPlot
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private Guid _joyGuid;
-        private int _rx;
-        private int _ry;
-        private int _lx;
-        private int _ly;
         private bool isNewDevice = true;
         private string _controllerName;
         private int _trailCount = 100;
@@ -35,14 +30,21 @@ namespace CronusXYJoystickPlot
             bw.DoWork += BwOnDoWork;
             bw.RunWorkerAsync();
             DeviceBox.SelectionChanged += DeviceBoxOnSelectionChanged;
+            StickLeft.Prefix = "L";
+            StickRight.Prefix = "R";
+            StickRight.SetTextRight();
             try
             {
                 LoadConfig();
             }
             catch
             {
-                //Ignore
+                //Ignore errors
             }
+            StickLeft.TrailLimit = _trailCount;
+            StickRight.TrailLimit = _trailCount;
+            StickLeft.Resources["MarkerColor"] = Application.Current.Resources["LSColor"];
+            StickRight.Resources["MarkerColor"] = Application.Current.Resources["RSColor"];
         }
 
         private void DeviceBoxOnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -133,12 +135,14 @@ namespace CronusXYJoystickPlot
                             SetVisibility(Visibility.Collapsed, Visibility.Visible);
                             bool changed = false;
                             var newValue = (state.X - short.MaxValue) / (short.MaxValue / 100);
+                            StickLeft.PolarX = state.X - short.MaxValue;
                             if (LX != newValue)
                             {
                                 changed = true;
                                 LX = newValue;
                             }
                             newValue = (state.Y - short.MaxValue) / (short.MaxValue / 100);
+                            StickLeft.PolarY = state.Y - short.MaxValue;
                             if (LY != newValue)
                             {
                                 changed = true;
@@ -146,12 +150,9 @@ namespace CronusXYJoystickPlot
                             }
                             if (changed)
                             {
-                                if (LSTrail.Children.Count > _trailCount)
-                                {
-                                    LSTrail.Children.RemoveAt(0);
-                                }
-                                LSTrail.Children.Add(MakeTrail(LXOffset, LYOffset, "LSColor"));
+                                StickLeft.AddTrail();
                             }
+                            StickLeft.RefreshAngleRadius();
 
                             int rx, ry;
                             if (TreatAsPSController)
@@ -166,12 +167,14 @@ namespace CronusXYJoystickPlot
                             }
                             changed = false;
                             newValue = (rx - short.MaxValue) / (short.MaxValue / 100);
+                            StickRight.PolarX = rx - short.MaxValue;
                             if (RX != newValue)
                             {
                                 changed = true;
                                 RX = newValue;
                             }
                             newValue = (ry - short.MaxValue) / (short.MaxValue / 100);
+                            StickRight.PolarY = ry - short.MaxValue;
                             if (RY != newValue)
                             {
                                 changed = true;
@@ -179,12 +182,9 @@ namespace CronusXYJoystickPlot
                             }
                             if (changed)
                             {
-                                if (RSTrail.Children.Count > _trailCount)
-                                {
-                                    RSTrail.Children.RemoveAt(0);
-                                }
-                                RSTrail.Children.Add(MakeTrail(RXOffset, RYOffset, "RSColor"));
+                                StickRight.AddTrail();
                             }
+                            StickRight.RefreshAngleRadius();
                         }
                         else
                         {
@@ -200,74 +200,43 @@ namespace CronusXYJoystickPlot
             }
         }
 
-        private Rectangle MakeTrail(double x, double y, string color)
-        {
-            var trailPointer = new Rectangle();
-            trailPointer.SetValue(Canvas.LeftProperty, x + 5);
-            trailPointer.SetValue(Canvas.TopProperty, y + 5);
-            trailPointer.Fill = (Brush)Resources[color];
-            trailPointer.Width = 2;
-            trailPointer.Height = 2;
-            return trailPointer;
-        }
-
         public int RX
         {
-            get => _rx;
+            get => StickRight.X;
             set
             {
-                _rx = value;
+                StickRight.X = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(RXOffset));
-                OnPropertyChanged(nameof(RXText));
             }
         }
-        public double RXOffset => GetOffset(RX);
-        public string RXText => string.Format("RX = {0}", RX);
-
         public int RY
         {
-            get => _ry;
+            get => StickRight.Y;
             set
             {
-                _ry = value;
+                StickRight.Y = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(RYOffset));
-                OnPropertyChanged(nameof(RYText));
             }
         }
-        public double RYOffset => GetOffset(RY);
-        public string RYText => string.Format("RY = {0}", RY);
 
         public int LX
         {
-            get => _lx;
+            get => StickLeft.X;
             set
             {
-                _lx = value;
+                StickLeft.X = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(LXOffset));
-                OnPropertyChanged(nameof(LXText));
             }
         }
-
-        public double LXOffset => GetOffset(LX);
-        public string LXText => string.Format("LX = {0}", LX);
-
         public int LY
         {
-            get => _ly;
+            get => StickLeft.Y;
             set
             {
-                _ly = value;
+                StickLeft.Y = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(LYOffset));
-                OnPropertyChanged(nameof(LYText));
             }
         }
-
-        public double LYOffset => GetOffset(LY);
-        public string LYText => string.Format("LY = {0}", LY);
 
         public string ControllerName
         {
@@ -281,18 +250,13 @@ namespace CronusXYJoystickPlot
 
         public bool TreatAsPSController { get; set; }
 
-        private double GetOffset(int axis)
-        {
-            return (axis * 3.50) + 430;
-        }
-
         private void SetVisibility(Visibility noController, Visibility others)
         {
             try
             {
                 NoControllerText.Visibility = noController;
-                InputDisplay.Visibility = others;
-                InputDisplay2.Visibility = others;
+                StickLeft.InputDisplay.Visibility = others;
+                StickRight.InputDisplay.Visibility = others;
             }
             catch
             {
@@ -316,7 +280,7 @@ namespace CronusXYJoystickPlot
         {
             try
             {
-                Resources[name] = new BrushConverter().ConvertFromString(color);
+                Application.Current.Resources[name] = new BrushConverter().ConvertFromString(color);
             }
             catch 
             {
@@ -359,8 +323,8 @@ namespace CronusXYJoystickPlot
                     {
                         if ("true".Equals(element.Value, StringComparison.CurrentCultureIgnoreCase))
                         {
-                            ScaleMarkersLeft.Visibility = Visibility.Collapsed;
-                            ScaleMarkersRight.Visibility = Visibility.Collapsed;
+                            StickLeft.ScaleMarkers.Visibility = Visibility.Collapsed;
+                            StickRight.ScaleMarkers.Visibility = Visibility.Collapsed;
                         }
                     }
                 }
@@ -388,3 +352,4 @@ namespace CronusXYJoystickPlot
         }
     }
 }
+

@@ -1,0 +1,360 @@
+﻿<UserControl
+    x:Class="CronusXYJoystickPlot.StickPlot"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cronusXyJoystickPlot="clr-namespace:CronusXYJoystickPlot">
+    <UserControl.Resources>
+        <Brush x:Key="MarkerColor">White</Brush>
+    </UserControl.Resources>
+    <Canvas Width="880" Height="880">
+        <Line
+            Canvas.Left="90"
+            Canvas.Top="90"
+            Stretch="Fill"
+            Stroke="{DynamicResource OutLineColor}"
+            StrokeThickness="1"
+            X1="0"
+            X2="700"
+            Y1="0"
+            Y2="700" />
+        <Line
+            Canvas.Left="90"
+            Canvas.Top="90"
+            Stretch="Fill"
+            Stroke="{DynamicResource OutLineColor}"
+            StrokeThickness="1"
+            X1="700"
+            X2="0"
+            Y1="0"
+            Y2="700" />
+        <Line
+            Canvas.Left="440"
+            Canvas.Top="90"
+            Stroke="{DynamicResource OutLineColor}"
+            StrokeThickness="1"
+            X1="0"
+            X2="0"
+            Y1="0"
+            Y2="700" />
+        <Line
+            Canvas.Left="90"
+            Canvas.Top="440"
+            Stroke="{DynamicResource OutLineColor}"
+            StrokeThickness="1"
+            X1="0"
+            X2="700"
+            Y1="0"
+            Y2="0" />
+        <Canvas
+            x:Name="ScaleMarkers"
+            Canvas.Left="40"
+            Canvas.Top="40"
+            Width="800"
+            Height="800">
+            <Line
+                Canvas.Left="380"
+                Canvas.Top="87.5"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="40"
+                Y2="40" />
+            <Line
+                Canvas.Left="380"
+                Canvas.Top="175"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="40"
+                Y2="40" />
+            <Line
+                Canvas.Left="380"
+                Canvas.Top="262.5"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="40"
+                Y2="40" />
+            <Line
+                Canvas.Left="380"
+                Canvas.Bottom="87.5"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="40"
+                Y2="40" />
+            <Line
+                Canvas.Left="380"
+                Canvas.Bottom="175"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="40"
+                Y2="40" />
+            <Line
+                Canvas.Left="380"
+                Canvas.Bottom="262.5"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="40"
+                Y1="40"
+                Y2="40" />
+            <Line
+                Canvas.Left="87.5"
+                Canvas.Top="380"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="40"
+                X2="40"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Left="175"
+                Canvas.Top="380"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="40"
+                X2="40"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Left="262.5"
+                Canvas.Top="380"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="40"
+                X2="40"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="380"
+                Canvas.Right="87.5"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="40"
+                X2="40"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="380"
+                Canvas.Right="175"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="40"
+                X2="40"
+                Y1="0"
+                Y2="40" />
+            <Line
+                Canvas.Top="380"
+                Canvas.Right="262.5"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="40"
+                X2="40"
+                Y1="0"
+                Y2="40" />
+        </Canvas>
+        <Canvas
+            x:Name="OuterEdge"
+            Width="880"
+            Height="880">
+            <Line
+                Canvas.Left="90"
+                Canvas.Top="90"
+                Stretch="Fill"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="0"
+                Y1="0"
+                Y2="700" />
+            <Line
+                Canvas.Top="90"
+                Canvas.Right="90"
+                Stretch="Fill"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="0"
+                Y1="0"
+                Y2="700" />
+            <Line
+                Canvas.Left="90"
+                Canvas.Bottom="90"
+                Stretch="Fill"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="700"
+                Y1="0"
+                Y2="0" />
+            <Line
+                Canvas.Top="90"
+                Canvas.Right="90"
+                Stretch="Fill"
+                Stroke="{DynamicResource OutLineColor}"
+                StrokeThickness="1"
+                X1="0"
+                X2="700"
+                Y1="0"
+                Y2="0" />
+        </Canvas>
+        <Ellipse
+            Canvas.Left="396.25"
+            Canvas.Top="396.25"
+            Width="87.5"
+            Height="87.5"
+            Stroke="{DynamicResource OutLineColor}"
+            StrokeThickness="1" />
+        <Ellipse
+            Canvas.Left="90"
+            Canvas.Top="90"
+            Width="700"
+            Height="700"
+            Fill="Transparent"
+            Stroke="{DynamicResource OutLineColor}"
+            StrokeThickness="1" />
+        <Canvas
+            x:Name="InputDisplay"
+            Canvas.Left="0"
+            Canvas.Top="0"
+            Width="880"
+            Height="880"
+            x:FieldModifier="public"
+            Visibility="Collapsed">
+            <StackPanel
+                Canvas.Left="20"
+                Canvas.Top="20"
+                Visibility="{Binding Visibility, ElementName=TextLeft}">
+                <TextBlock
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource MarkerColor}"
+                    Text="{Binding Path=XText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                <TextBlock
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource MarkerColor}"
+                    Text="{Binding Path=YText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+            </StackPanel>
+            <StackPanel
+                Canvas.Left="740"
+                Canvas.Top="20"
+                Visibility="{Binding Visibility, ElementName=TextRight}">
+                <TextBlock
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource MarkerColor}"
+                    Text="{Binding Path=XText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                <TextBlock
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource MarkerColor}"
+                    Text="{Binding Path=YText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+            </StackPanel>
+            <Grid
+                x:Name="TextLeft"
+                Canvas.Left="20"
+                Canvas.Bottom="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource MarkerColor}"
+                        Text="{Binding Path=PolarXText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                    <TextBlock
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource MarkerColor}"
+                        Text="{Binding Path=PolarYText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource MarkerColor}"
+                        Text="{Binding Path=PolarRadiusText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                    <TextBlock
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource MarkerColor}"
+                        Text="{Binding Path=PolarAngleText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                </StackPanel>
+            </Grid>
+            <Grid
+                x:Name="TextRight"
+                Canvas.Left="390"
+                Canvas.Bottom="20"
+                Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource MarkerColor}"
+                        Text="{Binding Path=PolarXText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                    <TextBlock
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource MarkerColor}"
+                        Text="{Binding Path=PolarYText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource MarkerColor}"
+                        Text="{Binding Path=PolarRadiusText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                    <TextBlock
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource MarkerColor}"
+                        Text="{Binding Path=PolarAngleText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}" />
+                </StackPanel>
+            </Grid>
+            <Grid
+                Canvas.Left="{Binding Path=XOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}"
+                Canvas.Top="{Binding Path=YOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=cronusXyJoystickPlot:StickPlot}, Mode=OneWay}"
+                Width="20"
+                Height="20">
+                <Path
+                    Stretch="Fill"
+                    Stroke="{DynamicResource MarkerColor}"
+                    StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="0,0" EndPoint="1,0" />
+                    </Path.Data>
+                </Path>
+                <Path
+                    Stretch="Fill"
+                    Stroke="{DynamicResource MarkerColor}"
+                    StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="0,0" EndPoint="0,1" />
+                    </Path.Data>
+                </Path>
+            </Grid>
+            <Canvas
+                x:Name="TrailCanvas"
+                Canvas.Left="4"
+                Canvas.Top="4"
+                Width="880"
+                Height="880"
+                x:FieldModifier="private"
+                Background="Transparent" />
+        </Canvas>
+    </Canvas>
+</UserControl>
