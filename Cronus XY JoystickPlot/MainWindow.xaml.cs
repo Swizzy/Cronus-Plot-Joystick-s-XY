@@ -258,7 +258,7 @@ namespace CronusXYJoystickPlot
 
         private double GetOffset(int axis)
         {
-            return (axis * 3.50) + 390;
+            return (axis * 3.50) + 430;
         }
 
         private void SetVisibility(Visibility noController, Visibility others)
