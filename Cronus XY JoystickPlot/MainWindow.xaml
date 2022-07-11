@@ -3,10 +3,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Cronus Plot Joystick's X/Y"
-    Background="#1F1F1F"
+    Background="{DynamicResource BackgroundColor}"
     ResizeMode="NoResize"
     SizeToContent="WidthAndHeight">
     <Window.Resources>
+        <Brush x:Key="BackgroundColor">#1F1F1F</Brush>
         <Brush x:Key="OutLineColor">#3FD7BA7D</Brush>
         <Brush x:Key="RSColor">#569CD6</Brush>
         <Brush x:Key="LSColor">#80EB3131</Brush>
@@ -15,28 +16,28 @@
         <Canvas Width="880" Height="880">
             <Line
                 Stretch="Fill"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="880"
                 Y1="0"
                 Y2="880" />
             <Line
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="880"
                 X2="0"
                 Y1="0"
                 Y2="880" />
             <Line
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="440"
                 X2="440"
                 Y1="0"
                 Y2="880" />
             <Line
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="880"
@@ -44,7 +45,7 @@
                 Y2="440" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -52,7 +53,7 @@
                 Y2="177.5" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -60,7 +61,7 @@
                 Y2="265" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -68,7 +69,7 @@
                 Y2="352.5" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -76,7 +77,7 @@
                 Y2="527.5" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -84,7 +85,7 @@
                 Y2="615" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -92,7 +93,7 @@
                 Y2="702.5" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="177.5"
                 X2="177.5"
@@ -100,7 +101,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="265"
                 X2="265"
@@ -108,7 +109,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="352.5"
                 X2="352.5"
@@ -116,7 +117,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="527.5"
                 X2="527.5"
@@ -124,7 +125,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="615"
                 X2="615"
@@ -132,7 +133,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="702.5"
                 X2="702.5"
@@ -144,7 +145,7 @@
                 Width="70"
                 Height="70"
                 Fill="Transparent"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1" />
             <Ellipse
                 Canvas.Left="90"
@@ -152,7 +153,7 @@
                 Width="700"
                 Height="700"
                 Fill="Transparent"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1" />
             <Canvas
                 x:Name="InputDisplay"
@@ -167,14 +168,14 @@
                     Canvas.Bottom="40"
                     FontSize="25"
                     FontWeight="Bold"
-                    Foreground="{StaticResource LSColor}"
+                    Foreground="{DynamicResource LSColor}"
                     Text="{Binding Path=LXText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
                 <TextBlock
                     Canvas.Left="20"
                     Canvas.Bottom="10"
                     FontSize="25"
                     FontWeight="Bold"
-                    Foreground="{StaticResource LSColor}"
+                    Foreground="{DynamicResource LSColor}"
                     Text="{Binding Path=LYText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
                 <Grid
                     Canvas.Left="{Binding Path=LXOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
@@ -183,7 +184,7 @@
                     Height="20">
                     <Path
                         Stretch="Fill"
-                        Stroke="{StaticResource LSColor}"
+                        Stroke="{DynamicResource LSColor}"
                         StrokeThickness="2">
                         <Path.Data>
                             <LineGeometry StartPoint="0,0" EndPoint="1,0" />
@@ -191,7 +192,7 @@
                     </Path>
                     <Path
                         Stretch="Fill"
-                        Stroke="{StaticResource LSColor}"
+                        Stroke="{DynamicResource LSColor}"
                         StrokeThickness="2">
                         <Path.Data>
                             <LineGeometry StartPoint="0,0" EndPoint="0,1" />
@@ -213,28 +214,28 @@
             Height="880">
             <Line
                 Stretch="Fill"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="880"
                 Y1="0"
                 Y2="880" />
             <Line
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="880"
                 X2="0"
                 Y1="0"
                 Y2="880" />
             <Line
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="440"
                 X2="440"
                 Y1="0"
                 Y2="880" />
             <Line
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="880"
@@ -242,7 +243,7 @@
                 Y2="440" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -250,7 +251,7 @@
                 Y2="177.5" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -258,7 +259,7 @@
                 Y2="265" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -266,7 +267,7 @@
                 Y2="352.5" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -274,7 +275,7 @@
                 Y2="527.5" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -282,7 +283,7 @@
                 Y2="615" />
             <Line
                 Canvas.Left="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="0"
                 X2="40"
@@ -290,7 +291,7 @@
                 Y2="702.5" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="177.5"
                 X2="177.5"
@@ -298,7 +299,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="265"
                 X2="265"
@@ -306,7 +307,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="352.5"
                 X2="352.5"
@@ -314,7 +315,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="527.5"
                 X2="527.5"
@@ -322,7 +323,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="615"
                 X2="615"
@@ -330,7 +331,7 @@
                 Y2="40" />
             <Line
                 Canvas.Top="420"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1"
                 X1="702.5"
                 X2="702.5"
@@ -342,7 +343,7 @@
                 Width="70"
                 Height="70"
                 Fill="Transparent"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1" />
             <Ellipse
                 Canvas.Left="90"
@@ -350,7 +351,7 @@
                 Width="700"
                 Height="700"
                 Fill="Transparent"
-                Stroke="{StaticResource OutLineColor}"
+                Stroke="{DynamicResource OutLineColor}"
                 StrokeThickness="1" />
             <Canvas
                 x:Name="InputDisplay2"
@@ -365,14 +366,14 @@
                     Canvas.Bottom="40"
                     FontSize="25"
                     FontWeight="Bold"
-                    Foreground="{StaticResource RSColor}"
+                    Foreground="{DynamicResource RSColor}"
                     Text="{Binding Path=RXText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
                 <TextBlock
                     Canvas.Left="740"
                     Canvas.Bottom="10"
                     FontSize="25"
                     FontWeight="Bold"
-                    Foreground="{StaticResource RSColor}"
+                    Foreground="{DynamicResource RSColor}"
                     Text="{Binding Path=RYText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
                 <Grid
                     Canvas.Left="{Binding Path=RXOffset, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}"
@@ -381,7 +382,7 @@
                     Height="20">
                     <Path
                         Stretch="Fill"
-                        Stroke="{StaticResource RSColor}"
+                        Stroke="{DynamicResource RSColor}"
                         StrokeThickness="2">
                         <Path.Data>
                             <LineGeometry StartPoint="0,0" EndPoint="1,0" />
@@ -389,7 +390,7 @@
                     </Path>
                     <Path
                         Stretch="Fill"
-                        Stroke="{StaticResource RSColor}"
+                        Stroke="{DynamicResource RSColor}"
                         StrokeThickness="2">
                         <Path.Data>
                             <LineGeometry StartPoint="0,0" EndPoint="0,1" />
@@ -427,9 +428,9 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 Checked="TreatAsPSController_Checked"
-                Unchecked="TreatAsPSController_Checked"
                 Content="Treat as Playstation Controller"
                 Foreground="White"
+                Unchecked="TreatAsPSController_Checked"
                 Visibility="Visible" />
             <TextBlock
                 x:Name="NameBlock"
@@ -438,7 +439,7 @@
                 VerticalAlignment="Bottom"
                 FontSize="25"
                 FontWeight="Bold"
-                Foreground="{StaticResource OutLineColor}"
+                Foreground="{DynamicResource OutLineColor}"
                 Text="{Binding Path=ControllerName, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=OneWay}" />
         </Grid>
     </Canvas>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -7,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 using SharpDX.DirectInput;
 
 namespace CronusXYJoystickPlot
@@ -23,6 +26,7 @@ namespace CronusXYJoystickPlot
         private int _ly;
         private bool isNewDevice = true;
         private string _controllerName;
+        private int _trailCount = 100;
 
         public MainWindow()
         {
@@ -31,6 +35,14 @@ namespace CronusXYJoystickPlot
             bw.DoWork += BwOnDoWork;
             bw.RunWorkerAsync();
             DeviceBox.SelectionChanged += DeviceBoxOnSelectionChanged;
+            try
+            {
+                LoadConfig();
+            }
+            catch
+            {
+                //Ignore
+            }
         }
 
         private void DeviceBoxOnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -134,7 +146,7 @@ namespace CronusXYJoystickPlot
                             }
                             if (changed)
                             {
-                                if (LSTrail.Children.Count > 100)
+                                if (LSTrail.Children.Count > _trailCount)
                                 {
                                     LSTrail.Children.RemoveAt(0);
                                 }
@@ -167,7 +179,7 @@ namespace CronusXYJoystickPlot
                             }
                             if (changed)
                             {
-                                if (RSTrail.Children.Count > 100)
+                                if (RSTrail.Children.Count > _trailCount)
                                 {
                                     RSTrail.Children.RemoveAt(0);
                                 }
@@ -298,6 +310,54 @@ namespace CronusXYJoystickPlot
         private void TreatAsPSController_Checked(object sender, RoutedEventArgs e)
         {
             TreatAsPSController = TreatAsPSControllerBox.IsChecked == true;
+        }
+
+        private void SetBrushColor(string name, string color)
+        {
+            try
+            {
+                Resources[name] = new BrushConverter().ConvertFromString(color);
+            }
+            catch 
+            {
+                // Ignore
+            }
+        }
+
+        private void LoadConfig()
+        {
+            if (File.Exists("config.xml"))
+            {
+                var xml = XElement.Parse(File.ReadAllText("config.xml"));
+                foreach (XElement element in xml.Elements())
+                {
+                    var name = element.Name.ToString();
+                    if (name.Equals("Trails"))
+                    {
+                        if (int.TryParse(element.Value, NumberStyles.Any, null, out int trails) && trails >= 0)
+                        {
+                            _trailCount = trails;
+                        }
+                        continue;
+                    }
+                    if (name.Equals("Background", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        SetBrushColor("BackgroundColor", element.Value);
+                    }
+                    if (name.Equals("RS", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        SetBrushColor("RSColor", element.Value);
+                    }
+                    if (name.Equals("LS", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        SetBrushColor("LSColor", element.Value);
+                    }
+                    if (name.Equals("Outline", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        SetBrushColor("OutlineColor", element.Value);
+                    }
+                }
+            }
         }
     }
 }
