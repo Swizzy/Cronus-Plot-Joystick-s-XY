@@ -338,23 +338,30 @@ namespace CronusXYJoystickPlot
                         {
                             _trailCount = trails;
                         }
-                        continue;
                     }
-                    if (name.Equals("Background", StringComparison.CurrentCultureIgnoreCase))
+                    else if (name.Equals("Background", StringComparison.CurrentCultureIgnoreCase))
                     {
                         SetBrushColor("BackgroundColor", element.Value);
                     }
-                    if (name.Equals("RS", StringComparison.CurrentCultureIgnoreCase))
+                    else if (name.Equals("RS", StringComparison.CurrentCultureIgnoreCase))
                     {
                         SetBrushColor("RSColor", element.Value);
                     }
-                    if (name.Equals("LS", StringComparison.CurrentCultureIgnoreCase))
+                    else if (name.Equals("LS", StringComparison.CurrentCultureIgnoreCase))
                     {
                         SetBrushColor("LSColor", element.Value);
                     }
-                    if (name.Equals("Outline", StringComparison.CurrentCultureIgnoreCase))
+                    else if (name.Equals("Outline", StringComparison.CurrentCultureIgnoreCase))
                     {
                         SetBrushColor("OutlineColor", element.Value);
+                    }
+                    else if (name.Equals("HideScaleMarkers"))
+                    {
+                        if ("true".Equals(element.Value, StringComparison.CurrentCultureIgnoreCase))
+                        {
+                            ScaleMarkersLeft.Visibility = Visibility.Collapsed;
+                            ScaleMarkersRight.Visibility = Visibility.Collapsed;
+                        }
                     }
                 }
             }
