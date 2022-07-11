@@ -421,6 +421,16 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 Visibility="Collapsed" />
+            <CheckBox
+                x:Name="TreatAsPSControllerBox"
+                Margin="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Checked="TreatAsPSController_Checked"
+                Unchecked="TreatAsPSController_Checked"
+                Content="Treat as Playstation Controller"
+                Foreground="White"
+                Visibility="Visible" />
             <TextBlock
                 x:Name="NameBlock"
                 Margin="20"

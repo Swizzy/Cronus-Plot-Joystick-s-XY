@@ -141,14 +141,25 @@ namespace CronusXYJoystickPlot
                                 LSTrail.Children.Add(MakeTrail(LXOffset, LYOffset, "LSColor"));
                             }
 
+                            int rx, ry;
+                            if (TreatAsPSController)
+                            {
+                                rx = state.Z;
+                                ry = state.RotationZ;
+                            }
+                            else
+                            {
+                                rx = state.RotationX;
+                                ry = state.RotationY;
+                            }
                             changed = false;
-                            newValue = (state.RotationX - short.MaxValue) / (short.MaxValue / 100);
+                            newValue = (rx - short.MaxValue) / (short.MaxValue / 100);
                             if (RX != newValue)
                             {
                                 changed = true;
                                 RX = newValue;
                             }
-                            newValue = (state.RotationY - short.MaxValue) / (short.MaxValue / 100);
+                            newValue = (ry - short.MaxValue) / (short.MaxValue / 100);
                             if (RY != newValue)
                             {
                                 changed = true;
@@ -256,6 +267,8 @@ namespace CronusXYJoystickPlot
             }
         }
 
+        public bool TreatAsPSController { get; set; }
+
         private double GetOffset(int axis)
         {
             return (axis * 3.50) + 430;
@@ -280,6 +293,11 @@ namespace CronusXYJoystickPlot
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void TreatAsPSController_Checked(object sender, RoutedEventArgs e)
+        {
+            TreatAsPSController = TreatAsPSControllerBox.IsChecked == true;
         }
     }
 }
