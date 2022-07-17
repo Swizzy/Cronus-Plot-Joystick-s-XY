@@ -92,7 +92,7 @@ namespace CronusXYJoystickPlot
             {
                 angle = 180 * Math.Asin(PolarY / radius) / Math.PI;
             }
-            if (PolarY < 0)
+            if (PolarY > 0)
             {
                 angle = 360 - Math.Abs(angle);
             }
